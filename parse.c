@@ -7,9 +7,9 @@
 
 //TODO: Find the largest token string size and set this properly
 #define MAXTOKENLEN 127
-#define NUM_SYMBOLS 20
+#define NUM_KEYWORDS 20
 
-char symbols[NUM_SYMBOLS][MAXTOKENLEN] = {"short", "char", "int","long","double","float","unsigned","signed",
+char keywords[NUM_KEYWORDS][MAXTOKENLEN] = {"short", "char", "int","long","double","float","unsigned","signed",
 					  "volatile", "extern", "static", "const", "struct", "enum", "union"};
 
 struct Token {
@@ -28,13 +28,13 @@ void classify_token(struct Token *t) {
 	
 	/* Handle alphanumeric tokens */
 	for (int i = 0; i < NUM_SYMBOLS; i++) {
-		if (!strcmp(t->string, symbols[i])) {
+		if (!strcmp(t->string, keywords[i])) {
 			t->class = NOT_IDENT;
 			return;
 		}
 	}
 
-	/* No matches on known static symbols, must be an identifier */
+	/* No matches on known static keywords, must be an identifier */
 	t->class = IDENT;
 }
 
