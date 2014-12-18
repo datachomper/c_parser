@@ -82,7 +82,9 @@ int main(int argc, char **argv)
 	/* Print string to be parsed */
 	char *line = argv[1];
 	//TODO: Remove demo line
-	line = "char* const *(*next)()";
+	//line = "char* const *(*next)()";
+	//line = "unsigned int* const *(*next)()";
+	line = "unsigned int* const *(*next[10])()";
 	printf("Parsing %s\n", line);
 	
 	/* From left to right push all tokens to the stack until the first
@@ -103,13 +105,14 @@ int main(int argc, char **argv)
 		/* First move to the right */
 		if (!get_token(&line, &this)) {
 			if (this.string[0] == '[') {
+				while (this.string[0] != ']')
+					get_token(&line, &this);
 				printf("array of ");
 			}
 			if (this.string[0] == '(') {
 				while (this.string[0] != ')')
 					get_token(&line, &this);
 				printf("a function returning ");
-				continue;
 			}
 		}
 
