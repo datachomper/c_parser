@@ -71,20 +71,13 @@ int get_token(char **s, struct Token *t) {
 
 int main(int argc, char **argv)
 {
-	//TODO: Remove comment block in order to pass in strings
-	#if 0
 	if (argc < 2) {
 		printf("Usage: %s \"crazy c declaration\"\n", argv[0]);
 		return -1;
 	}
-	#endif
 
 	/* Print string to be parsed */
 	char *line = argv[1];
-	//TODO: Remove demo line
-	//line = "char* const *(*next)()";
-	//line = "unsigned int* const *(*next)()";
-	line = "unsigned int* const *(*next[10])()";
 	printf("Parsing %s\n", line);
 	
 	/* From left to right push all tokens to the stack until the first
