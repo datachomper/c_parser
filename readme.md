@@ -1,6 +1,13 @@
 Summary:
  * Don't get excited. Literally all this program does is take a c style declaration string and translate it into english language.
 
+Example:
+```
+> parse.exe "char * const *(*myfunc)()"
+  Parsing char * const *(*myfunc)()
+  myfunc is a pointer to a function returning pointer to read-only pointer to char
+```
+
 TODO:
  * Process and print array sizes
  * Process and translate function arguments
