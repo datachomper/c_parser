@@ -1,5 +1,5 @@
 Summary:
- * Don't get excited. Literally all this program does is take a c style declaration string and translate it into english language.
+ * Don't get excited. Literally all this program does is take a c style declaration string and translate it into english language. C declaration routine adopted from http://www.ceng.metu.edu.tr/~ceng140/c_decl.pdf
 
 Example:
 ```
